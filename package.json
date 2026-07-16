@@ -1,0 +1,18 @@
+{
+  "name": "sfda-regulatory-finder-demo",
+  "version": "0.11.0",
+  "private": true,
+  "description": "نسخة MVP للمرجع الرقابي الذكي مبنية على سجل مصادر SFDA الرسمية",
+  "scripts": {
+    "build": "node build.js",
+    "test": "node build.js && node test/smoke.js && node test/live-search.mjs && node test/visual-analysis.mjs && node test/vercel-adapter.mjs",
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "jsdom": "^29.1.1"
+  }
+}

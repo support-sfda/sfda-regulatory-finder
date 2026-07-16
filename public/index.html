@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b5967" />
+  <title>المرجع الرقابي الذكي</title>
+  <link rel="stylesheet" href="/styles.css?v=0.11.0" />
+</head>
+<body>
+  <div class="demo-banner">نسخة MVP — النتائج موثقة بروابط رسمية وتستلزم التحقق من النص الساري</div>
+  <header class="topbar">
+    <button class="brand" data-route="home" aria-label="الرئيسية">
+      <span class="brand-mark">ر</span>
+      <span><strong>المرجع الرقابي الذكي</strong><small>بوابة المفتش للمتطلبات وتصنيف المنتجات</small></span>
+    </button>
+    <nav class="desktop-nav" aria-label="التنقل الرئيسي">
+      <button class="nav-link active" data-route="home">الرئيسية</button>
+      <button class="nav-link" data-route="search">البحث الرقابي</button>
+      <button class="nav-link" data-route="classify">تصنيف منتج</button>
+      <button class="nav-link" data-route="verify">التحقق من منتج</button>
+      <button class="nav-link" data-route="visual">التحليل البصري</button>
+    </nav>
+    <button class="profile" title="حساب تجريبي"><span>م</span><b>مفتش تجريبي</b></button>
+  </header>
+
+  <main>
+    <section id="home" class="view active">
+      <div class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">بحث موثّق • مصادر رسمية • نتيجة واضحة</span>
+          <h1>الوصول إلى المتطلب الرقابي<br><em>بخطوات أقل</em></h1>
+          <p>أنشئ ملفًا رقابيًا للمنتج يشمل التصنيف والأنظمة والأدلة والاشتراطات والمواصفات والمكونات والتحذيرات والسحب من مصادر الهيئة الرسمية.</p>
+          <div class="hero-search">
+            <input id="quickSearch" type="search" placeholder="ابحث باسم منتج، متطلب أو موضوع..." />
+            <button id="quickSearchBtn">بحث</button>
+          </div>
+          <div class="quick-tags"><span>بحث شائع:</span><button data-query="سحب أو تحذير">سحب أو تحذير</button><button data-query="إذن التسويق">إذن التسويق</button><button data-query="تصنيف منتج">تصنيف منتج</button></div>
+        </div>
+        <div class="hero-panel">
+          <div class="pulse-ring"><div class="pulse-core">✓</div></div>
+          <h3>قاعدة مرجعية محكومة</h3>
+          <p>كل نتيجة مرتبطة بمصدر رسمي قابل للفتح.</p>
+          <div class="source-stats"><div><b id="sourceCount">52</b><span>مصدرًا رسميًا</span></div><div><b id="textCount">40</b><span>مقتطفًا نظاميًا</span></div><div><b>138</b><span>قاعدة تصنيف</span></div><div><b>6</b><span>محاور رقابية</span></div></div>
+        </div>
+      </div>
+
+      <div class="section-heading"><div><span>ابدأ من هنا</span><h2>ماذا تريد أن تفعل؟</h2></div></div>
+      <div class="action-grid">
+        <button class="action-card teal" data-route="search"><span class="icon">⌕</span><div><h3>البحث في المتطلبات</h3><p>الوصول إلى الأنظمة واللوائح والأدلة المنشورة.</p></div><b>←</b></button>
+        <button class="action-card blue" data-route="classify"><span class="icon">◇</span><div><h3>تصنيف منتج</h3><p>تحديد المسار التنظيمي المحتمل وفق بيانات المنتج.</p></div><b>←</b></button>
+        <button class="action-card orange" data-route="verify"><span class="icon">▣</span><div><h3>التحقق من منتج</h3><p>البحث بالاسم أو الباركود أو رقم التسجيل.</p></div><b>←</b></button>
+        <button class="action-card visual" data-route="visual"><span class="icon">◉</span><div><h3>تحليل صورة رقابية</h3><p>صوّر المنتج أو جزءًا من المستودع واربط الملاحظات بالمتطلبات.</p></div><b>←</b></button>
+      </div>
+
+      <div class="notice"><span>!</span><div><b>تنبيه مهني</b><p>هذه النسخة أداة بحث تجريبية، ولا تمثل قرار تصنيف أو سند ضبط. يجب الرجوع إلى النص الرسمي الساري والأنظمة المعتمدة.</p></div></div>
+    </section>
+
+    <section id="search" class="view">
+      <div class="page-head"><div><span class="eyebrow">محرك البحث الرقابي</span><h1>أنشئ ملف المنتج الرقابي</h1><p>ابحث باسم المنتج أو مكوّنه أو علامته؛ ستظهر علاقته بالأنظمة واللوائح والأدلة والاشتراطات والمواصفات والتسجيل والتحذيرات والسحب.</p></div></div>
+      <div class="search-shell">
+        <div class="search-bar"><input id="searchInput" type="search" placeholder="مثال: بنادول، كريم يحتوي هيدروكينون، كمامة طبية، رقم تشغيلة..."/><button id="searchBtn">بحث شامل</button></div>
+        <div class="filters">
+          <label>المجال<select id="sectorFilter"><option value="all">جميع المجالات</option><option>عام مشترك</option><option>الغذاء</option><option>الأعلاف</option><option>المبيدات</option><option>الأجهزة الطبية</option><option>مستحضرات التجميل</option><option>المستحضرات الصيدلانية</option><option>المستحضرات البيطرية</option></select></label>
+          <label>فئة المصدر<select id="typeFilter"><option value="all">جميع المصادر</option><option value="legislation">نظام أو لائحة</option><option value="requirement">متطلبات أو مخالفات</option><option value="guide">دليل</option><option value="service">خدمة أو قاعدة</option><option value="alert">سحب أو تحذير</option></select></label>
+          <button id="resetFilters" class="ghost">إعادة الضبط</button>
+        </div>
+      </div>
+      <div class="index-notice"><b>مكتبة البحث الرقابي</b><span>تجمع التصنيف والتسجيل واللوائح والأدلة والاشتراطات والمكونات والتحذيرات والسحب، وتفتح قواعد الهيئة الحية والحساب الرسمي للتحقق من المستجدات.</span></div>
+      <div class="results-head"><h2>النتائج <span id="resultsCount"></span></h2><small id="resultsBreakdown">مرتبة حسب الصلة بالمصطلح</small></div>
+      <div id="resultsList" class="results-list"></div>
+      <div id="emptyResults" class="empty" hidden><span>⌕</span><h3>لم نجد نتيجة مطابقة</h3><p>جرّب مصطلحًا أوسع أو أزل بعض عوامل التصفية.</p></div>
+    </section>
+
+    <section id="classify" class="view">
+      <div class="page-head"><div><span class="eyebrow">مسار استرشادي</span><h1>تصنيف منتج</h1><p>أدخل البيانات المتاحة. النتيجة تساعد في توجيه البحث ولا تعد قرار تصنيف رسميًا.</p></div><div class="stepper"><span class="active">1</span><i></i><span>2</span><i></i><span>3</span></div></div>
+      <div class="form-layout">
+        <form id="classifyForm" class="panel form-card">
+          <div class="form-title"><span>1</span><div><h2>بيانات المنتج</h2><p>الحقول المميزة مطلوبة لإظهار نتيجة أولية.</p></div></div>
+          <div class="field-grid">
+            <label class="full">اسم المنتج <b>*</b><input id="productName" required placeholder="مثال: محلول عدسات لاصقة" /></label>
+            <label>الغرض من الاستخدام <b>*</b><select id="intendedUse" required><option value="">اختر الغرض</option><option value="medical">تشخيص أو علاج أو وقاية للإنسان</option><option value="veterinary">تشخيص أو علاج أو وقاية للحيوان</option><option value="cosmetic">تنظيف أو تجميل أو تحسين المظهر</option><option value="food">تغذية أو استهلاك غذائي للإنسان</option><option value="feed">تغذية الحيوان أو تحسين الإنتاج</option><option value="pesticide">مكافحة آفة أو حشرة</option><option value="other">استخدام آخر أو غير واضح</option></select></label>
+            <label>طريقة الاستخدام<select id="useMethod"><option value="">اختر الطريقة</option><option>استخدام خارجي</option><option>استخدام داخلي</option><option>يؤكل أو يشرب</option><option>يستخدم مع جهاز</option></select></label>
+            <label class="full">الادعاءات المكتوبة على المنتج <b>*</b><textarea id="claims" required placeholder="اكتب الادعاءات كما تظهر على العبوة أو الإعلان"></textarea></label>
+            <label class="full">المكونات أو المواد الفعالة<textarea id="ingredients" placeholder="أدخل المكونات إن كانت متاحة"></textarea></label>
+          </div>
+          <button class="primary wide" type="submit">تحليل المسار المحتمل</button>
+        </form>
+        <aside class="panel help-card"><span class="help-icon">i</span><h3>ما الذي يؤثر في التصنيف؟</h3><ul><li>الغرض المقصود من الاستخدام.</li><li>الادعاءات العلاجية أو التجميلية.</li><li>المكونات وآلية التأثير.</li><li>طريقة الاستخدام وشكل المنتج.</li></ul><a href="https://www.sfda.gov.sa/ar/eservices/65920" target="_blank" rel="noopener">فتح نظام تصنيف المنتجات PCS ↗</a></aside>
+      </div>
+      <div id="classificationResult" class="classification-result" hidden></div>
+    </section>
+
+    <section id="verify" class="view">
+      <div class="page-head"><div><span class="eyebrow">مسار تحقق موجّه</span><h1>التحقق من منتج</h1><p>اختر المجال وأدخل بيانات المنتج؛ سيحدد التطبيق قواعد التسجيل والسحب والتحذير الرسمية التي يجب فحصها.</p></div></div>
+      <div class="verify-card panel">
+        <label class="verify-domain">المجال الرقابي<select id="verifyDomain"><option value="general">غير محدد</option><option value="food">الغذاء</option><option value="feed">الأعلاف</option><option value="pesticide">المبيدات</option><option value="device">الأجهزة الطبية</option><option value="cosmetic">مستحضرات التجميل</option><option value="pharma">المستحضرات الصيدلانية</option><option value="veterinary">المستحضرات البيطرية</option></select></label>
+        <div class="verify-tabs"><button class="active" data-mode="barcode">الباركود</button><button data-mode="registration">رقم التسجيل</button><button data-mode="name">اسم المنتج</button></div>
+        <div class="verify-input"><input id="verifyInput" inputmode="numeric" placeholder="أدخل الباركود"/><button id="verifyBtn">تحقق</button></div>
+        <div class="verify-extra">
+          <label>الشركة أو المصنع <small>اختياري</small><input id="verifyCompany" placeholder="مثال: اسم الشركة المصنّعة" /></label>
+          <label>رقم التشغيلة <small>اختياري</small><input id="verifyBatch" placeholder="LOT / Batch" /></label>
+        </div>
+        <div id="verifyOutput" class="verify-output"><span>▦</span><h3>أدخل بيانات المنتج</h3><p>سنوضح هنا حالة الاتصال بالمصدر المناسب والنتيجة المتاحة.</p></div>
+      </div>
+      <div class="integration-note"><div><span>✓</span><h3>ما الذي تعمل عليه هذه النسخة؟</h3></div><p>تجلب السجلات الفعلية المنشورة في قواعد التحذيرات والسحب والاستدعاء وتحذيرات السلامة والأنظمة واللوائح والأدلة والتعاميم، وتعرض الرابط الرسمي المباشر لكل سجل. أما حالة تسجيل المنتج فتظل مسار تحقق مستقلًا بحسب قاعدة المجال.</p></div>
+    </section>
+
+    <section id="visual" class="view">
+      <div class="page-head visual-page-head"><div><span class="eyebrow">مساعد التحقق البصري</span><h1>حلّل صورة واربطها بالمتطلب</h1><p>ارفع صورة منتج أو قارئ حرارة أو منطقة داخل المستودع. ستظهر الملاحظات المرئية والمتطلبات الرسمية والأدلة الإضافية التي يجب على المفتش التحقق منها.</p></div><span class="visual-head-icon">◉</span></div>
+      <div class="visual-layout">
+        <section class="panel visual-upload-card">
+          <div class="visual-step"><span>1</span><div><b>حدّد نوع الحالة</b><small>يساعد ذلك على اختيار المتطلبات الصحيحة.</small></div></div>
+          <div class="visual-case-grid" id="visualCaseGrid">
+            <button type="button" class="visual-case active" data-visual-case="temperature"><span>🌡</span><b>قارئ الحرارة والرطوبة</b></button>
+            <button type="button" class="visual-case" data-visual-case="receiving"><span>⇩</span><b>منطقة الاستلام</b></button>
+            <button type="button" class="visual-case" data-visual-case="storage"><span>▦</span><b>منطقة التخزين</b></button>
+            <button type="button" class="visual-case" data-visual-case="isolation"><span>⊘</span><b>منطقة العزل</b></button>
+            <button type="button" class="visual-case" data-visual-case="cold"><span>❄</span><b>ثلاجة أو مجمد</b></button>
+            <button type="button" class="visual-case" data-visual-case="product"><span>▣</span><b>منتج أو بطاقة</b></button>
+          </div>
+          <div class="visual-step"><span>2</span><div><b>التقط صورة واضحة أو ارفعها</b><small>تجنب ظهور الأشخاص والبيانات الشخصية.</small></div></div>
+          <label class="visual-drop" id="visualDrop">
+            <input id="visualFile" type="file" accept="image/jpeg,image/png,image/webp" capture="environment" />
+            <span class="visual-camera">⌾</span><b>اضغط للتصوير أو اختيار صورة</b><small>JPG أو PNG أو WEBP — تعالج مؤقتًا ولا تحفظ في التطبيق</small>
+            <img id="visualPreview" alt="معاينة الصورة المرفوعة" hidden />
+          </label>
+          <div class="visual-photo-actions" id="visualPhotoActions" hidden><button type="button" class="ghost" id="replaceVisualPhoto">تغيير الصورة</button><span id="visualFileMeta"></span></div>
+          <label class="visual-context">معلومة مساندة للمحلل <small>اختياري</small><textarea id="visualContext" placeholder="مثال: مستودع أجهزة طبية، قارئ مثبت قرب باب الاستلام..."></textarea></label>
+          <button type="button" class="primary visual-analyze" id="visualAnalyzeBtn" disabled>تحليل الصورة وربطها بالمتطلبات</button>
+          <button type="button" class="visual-example-btn" id="visualExampleBtn">عرض مثال تحليلي لهذه الحالة</button>
+          <p class="visual-privacy">لا تستخدم النتيجة وحدها لإثبات مخالفة. يلزم تحقق المفتش من السجلات والشهادات والحالة الفعلية.</p>
+        </section>
+        <aside class="panel visual-guide">
+          <span class="eyebrow">إرشادات التصوير</span><h2 id="visualGuideTitle">قارئ الحرارة والرطوبة</h2>
+          <div id="visualGuideContent"></div>
+          <div class="visual-confidence-legend"><b>مستوى الثقة</b><span class="high">مرتفع: نص أو قراءة واضحة</span><span class="medium">متوسط: ملاحظة مكانية</span><span class="low">منخفض: يحتاج وثيقة أو قياسًا</span></div>
+        </aside>
+      </div>
+      <section id="visualResult" class="visual-result" hidden aria-live="polite"></section>
+    </section>
+  </main>
+
+  <footer><span>نسخة MVP — الإصدار 0.11.0</span><span>المصادر محصورة في موقع الهيئة وحساباتها الرسمية</span></footer>
+
+  <nav class="mobile-nav" aria-label="التنقل للجوال">
+    <button class="active" data-route="home"><span>⌂</span>الرئيسية</button>
+    <button data-route="search"><span>⌕</span>البحث</button>
+    <button data-route="classify"><span>◇</span>التصنيف</button>
+    <button data-route="verify"><span>▣</span>التحقق</button>
+    <button data-route="visual"><span>◉</span>الصورة</button>
+  </nav>
+
+  <dialog id="sourceDialog"><button class="dialog-close" aria-label="إغلاق">×</button><div id="dialogContent"></div></dialog>
+    <script src="/sources.js?v=0.11.0"></script>
+    <script src="/content-index.js?v=0.11.0"></script>
+    <script src="/classification-library.js?v=0.11.0"></script>
+    <script src="/app.js?v=0.11.0"></script>
+</body>
+</html>
