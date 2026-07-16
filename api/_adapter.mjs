@@ -1,4 +1,5 @@
-import worker from '../dist/server/index.js';
+import * as workerModule from '../dist/server/index.js';
+const worker = [workerModule, workerModule.default, workerModule.default?.default].find(candidate => typeof candidate?.fetch === 'function');
 
 export async function runWorker(request, response) {
   try {
